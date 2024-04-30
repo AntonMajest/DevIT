@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(rateLimitMiddleware);
 
 app.post('/api', (req, res) => {
-   const randomDelay = Math.floor(Math.random() * 1000);
+   const randomDelay = Math.floor(Math.random() * 1000) + 1;
     setTimeout(() => {
         res.json({ index: req.body.index });
     }, randomDelay);
